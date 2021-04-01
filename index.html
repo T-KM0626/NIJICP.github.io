@@ -1,6 +1,68 @@
-<!doctype html> 
-<html> 
-  <body> 
-    <h1>Hello World!!</h1> 
-  </body> 
-</html> 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>虹ヶ咲SSランダムカプ</title>
+</head>
+<body>
+
+<img id="gazo" src=""
+   width="150" height="150" border="0" alt="" style= display:none>
+<img id="gazo2" src=""
+   width="150" height="150" border="0" alt="" style= display:none>
+<div style="margin-left:10%;margin-right:10%;">
+<button onclick="changeIMG()">選択</button>
+</div>
+<script>
+
+//画像を配列に格納する
+var img = new Array();
+img[0] = new Image();
+img[0].src = "0.png";
+img[1] = new Image();
+img[1].src = "1.png";
+img[2] = new Image();
+img[2].src=  "2.png";
+img[3] = new Image();
+img[3].src=  "3.png";
+img[4] = new Image();
+img[4].src=  "4.png";
+img[5] = new Image();
+img[5].src=  "5.png";
+img[6] = new Image();
+img[6].src=  "6.png";
+img[7] = new Image();
+img[7].src=  "7.png";
+img[8] = new Image();
+img[8].src=  "8.png";
+img[9] = new Image();
+img[9].src=  "9.png";
+
+
+//画像番号用のグローバル変数
+var cnt=0;
+
+//画像切り替え関数
+function changeIMG(){
+	var a = Math.floor( Math.random() * 11 ) ;
+	var b = Math.floor( Math.random() * 11 ) ;
+  
+  //画像を切り替える
+  if(a == b)
+	{b = Math.floor( Math.random() * 11 )
+	  if(a == b)
+		{b = Math.floor( Math.random() * 11 )
+		  	}
+	  	if(a == b)
+			{b = Math.floor( Math.random() * 11 )
+		  		}
+	  }
+	  document.getElementById("gazo").src=img[a].src;
+	  document.getElementById("gazo2").src=img[b].src;
+	  document.getElementById('gazo').style.display = 'inline-block';
+	  document.getElementById('gazo2').style.display = 'inline-block';
+}
+
+</script>
+</body>
+</html>
