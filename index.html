@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+	</style>
 	<script>
 		//画像を配列に格納する
 		var img = new Array();
@@ -25,7 +26,7 @@
 			img[9].src=  "images/9.png"; 
 
 			var stockColors = ["コメディ","シリアス","鬱","エロ","安価","感動","ほのぼの","ホラー","ミステリ"];
-
+		
 		//画像番号用のグローバル変数
 		var cnt=0;
 
@@ -54,7 +55,7 @@
 			document.getElementById("cp1").style.display = "inline-block";
 			document.getElementById("cp2").src=img[b].src;
 			document.getElementById("cp2").style.display = "inline-block";
-
+			
 			switch (a){
 			case 0:document.getElementById("cp1name").innerText = "高咲 侑";
 				break;
@@ -103,20 +104,20 @@
 	</script>
 	<head>
 		<meta charset="UTF-8">
-		<title>虹ヶ咲SSランダムカプ</title>
+		<title>虹ヶ咲SSカプ自動生成</title>
 	</head>
 	<body>
 		<h1 align="center">虹ヶ咲SS書く時のカプ自動生成</h1>
 		<table border=0 align="center">
 			<tr>
 			  <th>
-				  <img id="cp1" src="images/0.png" width="150" height="150" border="0"></th>
+				  <img id="cp1" src="" width="150" height="150" border="0" alt="A" style= display:none></th>
 			  <th>
-				  <img id="cp2" src="images/0.png" width="150" height="150" border="0"></th>
+				  <img id="cp2" src="" width="150" height="150" border="0" alt="B" style= display:none></th>
 			</tr>
 			<tr>
-			  <td><p align="center" id="cp1name"　style= display:inline><tt>高咲 侑</tt></p> </td>
-			  <td><p align="center" id="cp2name"　style= display:inline><tt>あなた</tt></p> </td>
+			  <td><p align="center" id="cp1name"　style= display:inline><tt></tt></p> </td>
+			  <td><p align="center" id="cp2name"　style= display:inline><tt></tt></p> </td>
 			</tr>
 			<tr>
 				<td colspan="2"><p align="center" id="category"　style= display:inline><tt></tt></td>
