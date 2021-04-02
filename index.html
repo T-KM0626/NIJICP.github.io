@@ -22,16 +22,23 @@
 			img[8] = new Image();
 			img[8].src=  "images/8.png";
 			img[9] = new Image();
-			img[9].src=  "images/9.png";
+			img[9].src=  "images/9.png"; 
+
+			var stockColors = ["コメディ","シリアス","鬱","エロ","安価","感動","ほのぼの","ホラー","ミステリ"];
 
 		//画像番号用のグローバル変数
 		var cnt=0;
 
 		//画像切り替え関数
+		function changecat(){
+			var a = Math.floor( Math.random() * 9 ) ;
+			document.getElementById("category").innerText = "ジャンルは" + stockColors[a] + "で";
+			document.getElementById("category").display = "inline-block";
+		}
 		function changeIMG(){
 			var a = Math.floor( Math.random() * 11 ) ;
 			var b = Math.floor( Math.random() * 11 ) ;
-	  
+			
 		  	//画像を切り替える
 			if(a == b){b = Math.floor( Math.random() * 11 )}
 			if(a == b){b = Math.floor( Math.random() * 11 )}
@@ -43,26 +50,81 @@
 			if(a == b){b = Math.floor( Math.random() * 11 )}
 			if(a == b){b = Math.floor( Math.random() * 11 )}
 			
-			document.getElementById("gazo").src=img[a].src;
-			document.getElementById("gazo2").src=img[b].src;
-			document.getElementById('gazo').style.display = 'inline-block';
-			document.getElementById('gazo2').style.display = 'inline-block';
-		}
+			document.getElementById("cp1").src=img[a].src;
+			document.getElementById("cp1").style.display = "inline-block";
+			document.getElementById("cp2").src=img[b].src;
+			document.getElementById("cp2").style.display = "inline-block";
+
+			switch (a){
+			case 0:document.getElementById("cp1name").innerText = "高咲 侑";
+				break;
+			case 1:document.getElementById("cp1name").innerText = "上原 歩夢";
+				break;
+			case 2:document.getElementById("cp1name").innerText = "天王寺 璃奈";
+				break;
+			case 3:document.getElementById("cp1name").innerText = "中須 かすみ";
+				break;
+			case 4:document.getElementById("cp1name").innerText = "宮下 愛";
+				break;
+			case 5:document.getElementById("cp1name").innerText = "近江 彼方";
+				break;
+			case 6:document.getElementById("cp1name").innerText = "優木 せつ菜";
+				break;
+			case 7:document.getElementById("cp1name").innerText = "桜坂 しずく";
+				break;
+			case 8:document.getElementById("cp1name").innerText = "エマ ヴェルデ";
+				break;
+			case 9:document.getElementById("cp1name").innerText = "朝香 果林";
+				break;
+			}
+			switch (b){
+			case 0:document.getElementById("cp2name").innerText = "高咲 侑";
+				break;
+			case 1:document.getElementById("cp2name").innerText = "上原 歩夢";
+				break;
+			case 2:document.getElementById("cp2name").innerText = "天王寺 璃奈";
+				break;
+			case 3:document.getElementById("cp2name").innerText = "中須 かすみ";
+				break;
+			case 4:document.getElementById("cp2name").innerText = "宮下 愛";
+				break;
+			case 5:document.getElementById("cp2name").innerText = "近江 彼方";
+				break;
+			case 6:document.getElementById("cp2name").innerText = "優木 せつ菜";
+				break;
+			case 7:document.getElementById("cp2name").innerText = "桜坂 しずく";
+				break;
+			case 8:document.getElementById("cp2name").innerText = "エマ ヴェルデ";
+				break;
+			case 9:document.getElementById("cp2name").innerText = "朝香 果林";
+				break;
+			}
+		}		
 	</script>
 	<head>
 		<meta charset="UTF-8">
 		<title>虹ヶ咲SSランダムカプ</title>
 	</head>
 	<body>
-	<p align="center">虹ヶ咲SS書く時のカプ自動生成</p>
-	<div style="margin-left:10%;margin-right:10%;text-align:center;">
-		<img id="gazo" src=""
-		   width="150" height="150" border="0" alt="" style= display:none>
-		<img id="gazo2" src=""
-		   width="150" height="150" border="0" alt="" style= display:none>
-	</div>
+		<h1 align="center">虹ヶ咲SS書く時のカプ自動生成</h1>
+		<table border=0 align="center">
+			<tr>
+			  <th>
+				  <img id="cp1" src="images/0.png" width="150" height="150" border="0"></th>
+			  <th>
+				  <img id="cp2" src="images/0.png" width="150" height="150" border="0"></th>
+			</tr>
+			<tr>
+			  <td><p align="center" id="cp1name"　style= display:inline><tt>高咲 侑</tt></p> </td>
+			  <td><p align="center" id="cp2name"　style= display:inline><tt>あなた</tt></p> </td>
+			</tr>
+			<tr>
+				<td colspan="2"><p align="center" id="category"　style= display:inline><tt></tt></td>
+			</tr>
+		  </table>
 		<div style="text-align : center;">
-			<button onclick="changeIMG()">選択</button>
+			<button onclick="changeIMG()">カプ生成</button>
+			<button onclick="changecat()">ジャンル</button>
 		</div>
 	</body>
 </html>
